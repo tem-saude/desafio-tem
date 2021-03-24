@@ -15,6 +15,10 @@ Utilização de gerenciamento de estado para aplicação React (Redux, ContextAp
 
 Realização dos testes em alguma biblioteca de sua preferência  (Jest, etc..)
 
+### Diferenciais
+Subir aplicação em algum serviço como (netfly, surge e etc)
+Documentação de API
+
 ### Observações
 
 Caso seu teste seja apenas para FrontEnd realizar a criação da aplicação com dados Mockados.
