@@ -16,8 +16,8 @@ Utilização de gerenciamento de estado para aplicação React (Redux, ContextAp
 Realização dos testes em alguma biblioteca de sua preferência  (Jest, etc..)
 
 ### Diferenciais
--Subir aplicação em algum serviço como (netfly, surge e etc)
--Documentação de API
+- Subir aplicação em algum serviço como (netfly, surge e etc)
+- Documentação de API
 
 ### Observações
 
