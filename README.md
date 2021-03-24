@@ -17,6 +17,7 @@ Realização dos testes em alguma biblioteca de sua preferência  (Jest, etc..)
 
 ### Diferenciais
 Subir aplicação em algum serviço como (netfly, surge e etc)
+
 Documentação de API
 
 ### Observações
