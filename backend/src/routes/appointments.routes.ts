@@ -1,13 +1,19 @@
 import { Router } from 'express';
 import {parseISO, format} from 'date-fns'
-import {CreateAppointmentService} from '../services/Appointments'
+import {CreateAppointmentService, ListAppointmentsServices} from '../services/Appointments'
 
 
 const appointmentsRouter = Router()
 
 
-appointmentsRouter.get('/', (request, response) =>{
-  return response.json({message: 'Appointments List'})
+appointmentsRouter.get('/', async(request, response) =>{
+  try{
+    const listAppointmentsServices = new ListAppointmentsServices();
+    const appointments = await listAppointmentsServices.execute();
+    return response.status(200).json(appointments);
+  }catch(error){
+    return response.status(400).json({message: error.message})
+  }
 })
 
 appointmentsRouter.post('/', async(request, response) =>{
@@ -30,5 +36,7 @@ appointmentsRouter.post('/', async(request, response) =>{
   }
 
 })
+
+
 
 export default appointmentsRouter;
