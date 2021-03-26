@@ -30,7 +30,7 @@ export default class CreateAppointment1616794913429 implements MigrationInterfac
 
           {
             name: 'appointment_date',
-            type: 'timestamp',
+            type: 'timestamp with time zone',
             isNullable:false
           },
 
