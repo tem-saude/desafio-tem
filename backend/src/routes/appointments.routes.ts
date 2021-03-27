@@ -1,6 +1,6 @@
 import { Router } from 'express';
 import {parseISO, format} from 'date-fns'
-import {CreateAppointmentService, ListAppointmentsServices,DeleteAppointmentService,UpdateAppointmentService} from '../services/Appointments'
+import {CreateAppointmentService, ListAppointmentsServices,DeleteAppointmentService,UpdateAppointmentService, ListAppointmentService} from '../services/Appointments'
 
 
 const appointmentsRouter = Router()
@@ -16,6 +16,17 @@ appointmentsRouter.get('/', async(request, response) =>{
   }
 })
 
+appointmentsRouter.get('/:id', async(request, response) =>{
+   try{
+     const {id} = request.params;
+     const listAppointmentService = new ListAppointmentService();
+     const appointment = await listAppointmentService.execute(id);
+     return response.status(200).json(appointment)
+
+   }catch(error){
+     return response.status(400).json(error);
+   }
+})
 appointmentsRouter.post('/', async(request, response) =>{
   try{
     const { patient, doctor, appointment_date} = request.body;
