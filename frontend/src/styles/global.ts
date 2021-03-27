@@ -1,4 +1,5 @@
 import {createGlobalStyle} from 'styled-components';
+import 'react-toastify/dist/ReactToastify.css'
 import * as colors from '../config/colors'
 
 
@@ -37,5 +38,33 @@ button{
 
 ul{
   list-style:none;
+}
+
+body .Toastify__toast-container{
+  margin-top:20px;
+  padding: 20px;
+  color:#fff;
+  opacity:0.8
+}
+
+body .Toastify .Toastify__toast-container .Toastify__toast--success{
+  background:#50d386;
+
+}
+
+body .Toastify .Toastify__toast-container .Toastify__toast--error{
+  background:#fcf80d;
+
+}
+
+
+body .Toastify .Toastify__toast-container .Toastify__toast--warning{
+  background:#fc0d21;
+
+}
+
+
+body .Toastify .Toastify__toast-container .Toastify__toast--info{
+  background:#36bcf1;
 }
 `
