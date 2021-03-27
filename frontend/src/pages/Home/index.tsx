@@ -19,7 +19,7 @@ const Home:React.FC  =() =>{
         <LeftContent >
             <img src={createAppointmentImage} alt="Create Appointment Icon"/>
             <strong> Criar um novo Agendamento </strong>
-            <Link to="/register"> Clique Aqui </Link>
+           <Link to="/register">Clique Aqui </Link>
         </LeftContent>
 
         <RightContent>
