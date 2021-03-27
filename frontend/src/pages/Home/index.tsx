@@ -1,19 +1,22 @@
-import React  from 'react';
-import { Link} from 'react-router-dom';
-import ExitButton from '../../components/Button'
+import React from 'react';
+import { Link } from 'react-router-dom';
+import Header from '../../components/Header'
 
-import {Container,LeftContent,RightContent, Content} from './styles'
-import createAppointmentImage from '../../assets/createAppointment.png'
-import listAppointmentImage from '../../assets/listAppointment.png'
+import createAppointmentImage from '../../assets/createAppointment.png';
+import listAppointmentImage from '../../assets/listAppointment.png';
+import { Container, Content, LeftContent, RightContent } from './styles';
+
+
+
+
 
 
 const Home:React.FC  =() =>{
 
   return(
   <>
+    <Header/>
     <Container>
-      <ExitButton/>
-
         <h1> O que você deseja fazer? </h1>
        <Content>
         <LeftContent >

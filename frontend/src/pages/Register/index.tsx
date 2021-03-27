@@ -2,19 +2,20 @@ import React from 'react';
 import {Link} from 'react-router-dom'
 import {FiArrowLeft} from 'react-icons/fi'
 import {Container, Form, Content} from './styles'
-import ExitButton from '../../components/Button'
+
+import Header from '../../components/Header'
 
 const Register:React.FC = () =>{
   return(
     <>
+      <Header/>
      <Content>
        <div>
          <Link to="/home">
-        <FiArrowLeft size={20}color="#aaa"/>
-         <span> Voltar</span>
+          <FiArrowLeft size={20}color="#aaa"/>
          </Link>
        </div>
-      <ExitButton/>
+
      </Content>
       <Container>
           <Form>

@@ -123,6 +123,8 @@ button{
 
 export const Content = styled.div`
   padding: 10px;
+  position:absolute;
+  top: 18px;
   a{
     display:flex;
     align-items:center;

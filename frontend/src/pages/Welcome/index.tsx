@@ -1,13 +1,14 @@
 import React, { useState,useCallback} from 'react';
-import {useHistory} from 'react-router-dom'
+import {useHistory} from 'react-router-dom';
 import { toast } from 'react-toastify';
+import {useAuth} from '../../hooks/index'
 import { Container, Title, Error} from './styles';
 
 const Welcome:React.FC  = () =>{
   const history = useHistory()
   const [inputText, setInputText] = useState('')
   const [inputError, setInputError] = useState('')
-
+  const {addUser} = useAuth()
   const handleStart = useCallback(() =>{
     if(!inputText){
       setInputError('Por favor informe o nome do úsuario')
@@ -15,12 +16,13 @@ const Welcome:React.FC  = () =>{
     }
 
     toast.success(`Seja bem vindo ao sistema ${inputText}`)
+    setInputText('')
+    setInputError('')
+    addUser(inputText)
     setTimeout(() =>{
       history.push('/home')
-      setInputText('')
-      setInputError('')
     },2000)
-  },[ inputText, history])
+  },[ inputText, history, addUser])
 
   return(
     <Container hasError={!!inputError}>
