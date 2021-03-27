@@ -1,10 +1,13 @@
 import React from 'react';
-import { Container } from './styles';
+import {Link} from 'react-router-dom'
+import { Container, Title } from './styles';
 
 const Welcome:React.FC  = () =>{
   return(
     <Container>
-      <h1> Teste Técnico</h1>
+      <h1> Seja bem-vindo ao teste técnico da <Title>TEM</Title> </h1>
+      <span> Clique no botão "Prosseguir" para continuar </span>
+      <Link to="/"> Prosseguir</Link>
     </Container>
   )
 }

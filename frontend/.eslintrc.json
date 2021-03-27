@@ -25,6 +25,7 @@
       "prettier"
   ],
   "rules": {
+    "react/no-unescaped-entities":"off",
     "no-shadow":"off",
     "no-console": "off",
     "@typescript-eslint/ban-types":"off",
