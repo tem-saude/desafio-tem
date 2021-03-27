@@ -7,7 +7,7 @@ const Welcome:React.FC  = () =>{
     <Container>
       <h1> Seja bem-vindo ao teste técnico da <Title>TEM</Title> </h1>
       <span> Clique no botão "Prosseguir" para continuar </span>
-      <Link to="/"> Prosseguir</Link>
+      <Link to="/home"> Prosseguir</Link>
     </Container>
   )
 }

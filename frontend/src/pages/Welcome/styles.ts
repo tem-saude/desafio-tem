@@ -36,7 +36,7 @@ export const Container = styled.div`
  text-align:center;
  box-shadow: 0 0 4px 4px ${colors.textHighlight};
  background:rgba(255,255,255,0.5);
- animation: ${showContent} 4s ease-out;
+ animation: ${showContent} 2s ease-out;
 
  h1{
    font-size: 30px;
