@@ -1,6 +1,6 @@
 import { Router } from 'express';
 import {parseISO, format} from 'date-fns'
-import {CreateAppointmentService, ListAppointmentsServices} from '../services/Appointments'
+import {CreateAppointmentService, ListAppointmentsServices,DeleteAppointmentService} from '../services/Appointments'
 
 
 const appointmentsRouter = Router()
@@ -37,6 +37,17 @@ appointmentsRouter.post('/', async(request, response) =>{
 
 })
 
+
+appointmentsRouter.delete('/:id',async(request, response)=>{
+  try{
+    const {id} = request.params;
+    const deleteAppointmentService = new DeleteAppointmentService();
+    const deletedAppoiment = await deleteAppointmentService.execute(id);
+    return response.status(200).json({message: 'This appointment was removed'})
+  }catch(error){
+    return response.status(400).json({message: error.message})
+  }
+})
 
 
 export default appointmentsRouter;
