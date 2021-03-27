@@ -61,6 +61,12 @@ export const Container = styled.div<ContainerProps>`
    border: 1px solid #aaa;
    padding-left: 8px;
  }
+
+
+
+
+
+
  span{
    width: 100%;
    max-width: 450px;
@@ -90,8 +96,8 @@ export const Container = styled.div<ContainerProps>`
 
  }
 
-`
 
+`;
 
 
 export const Title = styled.strong`

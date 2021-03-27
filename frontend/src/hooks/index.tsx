@@ -1,7 +1,6 @@
 import React, {createContext, useContext, useCallback, useState} from 'react';
 
 
-
 interface AuthContextData{
   addUser(name:string):void;
   signOut(): void;
