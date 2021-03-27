@@ -25,6 +25,7 @@
       "prettier"
   ],
   "rules": {
+    "prefer-const":"off",
     "react/no-unescaped-entities":"off",
     "no-shadow":"off",
     "no-console": "off",

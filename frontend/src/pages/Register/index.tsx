@@ -1,10 +1,11 @@
-import React, {useState, useCallback} from 'react';
-import {Link} from 'react-router-dom'
-import {FiArrowLeft} from 'react-icons/fi'
-import {Container, Form, Content} from './styles'
-import Select from '../../components/Select'
+import React, { useCallback, useState } from 'react';
+import { FiArrowLeft } from 'react-icons/fi';
+import { Link } from 'react-router-dom';
+import api from '../../services/api'
+import Header from '../../components/Header';
+import Select from '../../components/Select';
+import { Container, Content, Form } from './styles';
 
-import Header from '../../components/Header'
 
 const Register:React.FC = () =>{
     const [name, setName] = useState('');
@@ -12,7 +13,7 @@ const Register:React.FC = () =>{
     const [appointmentDate, setAppointmentDate] =useState('')
 
     const handleSubmit = useCallback(async(data:any)=>{
-
+       let errors = false;
     },[])
   return(
     <>
