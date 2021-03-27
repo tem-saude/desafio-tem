@@ -44,7 +44,8 @@ body .Toastify__toast-container{
   margin-top:20px;
   padding: 20px;
   color:#fff;
-  opacity:0.8
+  opacity:0.8;
+  font-size: 14px;
 }
 
 body .Toastify .Toastify__toast-container .Toastify__toast--success{

@@ -85,13 +85,16 @@ export const LeftContent  = styled.div`
  }
 
 
- button{
+ a{
    width: 180px;
    height: 50px;
    background:#560791;
    border: 0;
    color:#fff;
    border-radius:30px;
+   display:flex;
+   justify-content:center;
+   align-items:center;
 
    transition: all 0.8s ease-out;
    &:hover{
@@ -137,13 +140,16 @@ export const RightContent = styled.div`
    padding-bottom:15px;
  }
 
- button{
+ a{
    width: 180px;
    height: 50px;
    background:#560791;
    margin-top: 20px;
    border: 0;
    color:${colors.white};
+   display:flex;
+   justify-content:center;
+   align-items:center;
 
    border-radius:30px;
    transition: all 1s ease-out;
@@ -156,39 +162,3 @@ export const RightContent = styled.div`
 
 `
 
-export const Exit = styled.div`
-
-
-position: absolute;
-top:20px;
-right: 60px;
-display:flex;
-align-items:center;
-width: 60px;
-justify-content:space-between;
-cursor: pointer;
-
-button{
-  width: 100%;
-  border:0;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  &:hover{
-  color:${colors.textHighlight};
-  span{
-    color:${colors.textHighlight};
-  }
-}
-
-
-}
-
-span{
-  font-size: 18px;
-  color:${colors.text}
-}
-
-
-
-`
