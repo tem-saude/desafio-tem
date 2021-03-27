@@ -1,13 +1,21 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { FiEdit, FiTrash } from 'react-icons/fi';
 import Header from '../../components/Header';
 import { Container, Content, Item } from './styles';
 import api from '../../services/api'
 
+interface AppointmentData{
+  id:string;
+  patient: string;
+  doctor: string;
+  appointment_date: string;
+}
+
 const Appointments:React.FC = () =>{
+  const [appointments, setAppoiment] = useState<AppointmentData[]>([] as AppointmentData[])
   useEffect(() =>{
     api.get('/appointments').then(response =>{
-      console.log(response.data);
+      setAppoiment(response.data)
     })
   },[])
 
@@ -17,17 +25,19 @@ const Appointments:React.FC = () =>{
     <Container>
         <Content>
           <h1> Lista de agendamentos </h1>
-          <Item>
+         {appointments.map(appointment =>(
+            <Item key={appointment.id}>
             <div>
-              <p> <strong>Nome do paciente:</strong> Lucas Alves Dos Santos </p>
-              <p> <strong> Nome do médico: </strong> Ana Megale</p>
-              <p> <strong> Data do agendamento: </strong> 25/03/2021 10:30</p>
+              <p> <strong>Nome do paciente:</strong> {appointment.patient} </p>
+              <p> <strong> Nome do médico: </strong> {appointment.doctor}</p>
+              <p> <strong> Data do agendamento: </strong> {appointment.appointment_date}</p>
             </div>
             <div>
               <FiEdit size={23} color="#e83f5b"/>
               <FiTrash size={23} color="#5965e0"/>
             </div>
           </Item>
+         ))}
         </Content>
     </Container>
     </>

@@ -42,6 +42,10 @@ export const Item = styled.div`
  border: 2px solid #ccc;
  border-radius:8px;
 
+ p{
+   margin: 5px;
+ }
+
  div{
    strong{
      color:${colors.text};
