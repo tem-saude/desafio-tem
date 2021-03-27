@@ -2,6 +2,9 @@ import styled, {keyframes} from 'styled-components'
 import {shade} from 'polished'
 import * as colors from '../../config/colors'
 
+interface ContainerProps{
+  hasError: boolean;
+}
 
 const showContent = keyframes`
 
@@ -22,11 +25,11 @@ const showContent = keyframes`
  }
 `
 
-export const Container = styled.div`
+export const Container = styled.div<ContainerProps>`
  width: 100%;
  max-width:600px;
- height: 300px;
- margin:200px auto;
+
+ margin:100px auto;
  padding: 20px;
  border-radius:20px;
  display:flex;
@@ -44,17 +47,31 @@ export const Container = styled.div`
    max-width: 400px;
    margin: 0 auto;
    text-align:center;
-   color: ${colors.title}
+   color: ${colors.title};
+   padding: 20px;
  }
 
+ input{
+   margin: 30px 0 10px 0;
+   width: 100%;
+   max-width: 400px;
+   height:45px;
+   padding-left: 8px;
+   border-radius: 8px;
+   border: 1px solid #aaa;
+   padding-left: 8px;
+ }
  span{
+   width: 100%;
+   max-width: 450px;
    margin: 10px 0;
    color:${colors.text};
    font-size: 15px;
  }
 
 
- a{
+ button{
+   border:0;
    width: 235px;
    height: 50px;
    margin-top: 20px;
@@ -85,4 +102,13 @@ export const Title = styled.strong`
    color:${shade(0.2, '#e83f5b')};
   border-bottom: 1px solid ${colors.red}
  }
+`
+
+export const Error = styled.div`
+ background:${colors.red};
+ width: 100%;
+ max-width:400px;
+ padding: 10px 0;
+ border-radius:8px;
+ color:#fff;
 `
