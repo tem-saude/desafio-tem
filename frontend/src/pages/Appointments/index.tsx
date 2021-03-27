@@ -1,10 +1,19 @@
-import React from 'react'
-import {FiEdit,FiTrash} from 'react-icons/fi'
-import {Container, Content, Item} from './styles'
+import React, { useEffect } from 'react';
+import { FiEdit, FiTrash } from 'react-icons/fi';
+import Header from '../../components/Header';
+import { Container, Content, Item } from './styles';
+import api from '../../services/api'
 
 const Appointments:React.FC = () =>{
+  useEffect(() =>{
+    api.get('/appointments').then(response =>{
+      console.log(response.data);
+    })
+  },[])
+
   return(
     <>
+    <Header/>
     <Container>
         <Content>
           <h1> Lista de agendamentos </h1>

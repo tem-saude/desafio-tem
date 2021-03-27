@@ -1,20 +1,57 @@
-import React, { useCallback, useState } from 'react';
+import React, { FormEvent, useCallback, useState } from 'react';
 import { FiArrowLeft } from 'react-icons/fi';
-import { Link } from 'react-router-dom';
-import api from '../../services/api'
+import { Link, useHistory } from 'react-router-dom';
+import { toast } from 'react-toastify';
+import validator from 'validator';
 import Header from '../../components/Header';
 import Select from '../../components/Select';
+import api from '../../services/api';
 import { Container, Content, Form } from './styles';
 
 
-const Register:React.FC = () =>{
-    const [name, setName] = useState('');
-    const [doctor, setDoctor] = useState('');
-    const [appointmentDate, setAppointmentDate] =useState('')
 
-    const handleSubmit = useCallback(async(data:any)=>{
-       let errors = false;
-    },[])
+
+const Register:React.FC = () =>{
+    const history = useHistory();
+    const [patient, setPatient] = useState('');
+    const [doctor, setDoctor] = useState('');
+    const [appointment_date, setAppointmentDate] =useState('')
+
+  const handleSubmit = useCallback(async (e:FormEvent<HTMLFormElement>) =>{
+    e.preventDefault()
+    try{
+      let formErrors = false;
+
+      if(validator.isEmpty(patient)){
+        formErrors = true;
+        toast.warning('Por favor informe o nome paciente')
+        return
+      }
+      if(validator.isEmpty(doctor)){
+        formErrors = true;
+        toast.warning('Por favor informe o nome do médico')
+        return
+      }
+
+      if(validator.isEmpty(appointment_date)){
+        formErrors = true;
+        toast.warning('Por favor informe a data do agendamento')
+        return
+      }
+
+      await api.post('/appointments',{
+        patient,
+        doctor,
+        appointment_date
+      })
+      toast.success('Agendamento cadastradado com sucesso')
+      history.push('/dashboard')
+    }catch(error){
+      toast.error('Não foi possivel realizar o agendamento.')
+    }
+
+  },[appointment_date, doctor,patient, history])
+
   return(
     <>
       <Header/>
@@ -35,8 +72,8 @@ const Register:React.FC = () =>{
                type="text"
                name="name"
                placeholder="Informe no nome do paciente"
-               value={name}
-               onChange={(e) => setName(e.target.value)}
+               value={patient}
+               onChange={(e) => setPatient(e.target.value)}
                />
             </div>
 
@@ -60,10 +97,10 @@ const Register:React.FC = () =>{
               <span>Data do agendamento</span>
               <input
                type="datetime-local"
-               value={appointmentDate}
+               value={appointment_date}
                onChange={(e) => setAppointmentDate(e.target.value)}
                 />
-                <p>{appointmentDate}</p>
+
             </div>
 
             <button type="submit"> Cadastrar</button>
