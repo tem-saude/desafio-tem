@@ -12,7 +12,7 @@ class Appointment{
   @Column()
   doctor: string;
 
-  @Column()
+  @Column('timestamp with time zone')
   appointment_date: Date;
 
 
@@ -20,7 +20,7 @@ class Appointment{
    created_at: Date;
 
 
-   @CreateDateColumn()
+   @UpdateDateColumn()
    updated_at: Date;
 
    constructor(){

@@ -1,6 +1,6 @@
 import { Router } from 'express';
 import {parseISO, format} from 'date-fns'
-import {CreateAppointmentService, ListAppointmentsServices,DeleteAppointmentService} from '../services/Appointments'
+import {CreateAppointmentService, ListAppointmentsServices,DeleteAppointmentService,UpdateAppointmentService} from '../services/Appointments'
 
 
 const appointmentsRouter = Router()
@@ -44,6 +44,27 @@ appointmentsRouter.delete('/:id',async(request, response)=>{
     const deleteAppointmentService = new DeleteAppointmentService();
     const deletedAppoiment = await deleteAppointmentService.execute(id);
     return response.status(200).json({message: 'This appointment was removed'})
+  }catch(error){
+    return response.status(400).json({message: error.message})
+  }
+})
+
+
+appointmentsRouter.put('/:id', async(request, response) =>{
+  try{
+    const { id } = request.params;
+    const { patient, doctor, appointment_date} = request.body;
+    const parsedDate = parseISO(appointment_date);
+    const formatDate = format(parsedDate, "yyyy-MM-dd kk:mm:ss")
+    const updatedAppoinmentService = new UpdateAppointmentService();
+    const updatedAppoinment = await updatedAppoinmentService.excute(id, {
+      patient,
+      doctor,
+      appointment_date:formatDate,
+    })
+
+    return response.status(200).json(updatedAppoinment)
+
   }catch(error){
     return response.status(400).json({message: error.message})
   }
