@@ -1,9 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import { FiEdit, FiTrash } from 'react-icons/fi';
+import { useHistory, Link } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import Header from '../../components/Header';
+import { transformDate } from '../../helpers/transformDateToUTC';
+import api from '../../services/api';
 import { Container, Content, Item } from './styles';
-import api from '../../services/api'
-import { transformDate } from '../../helpers/transformDateToUTC'
 
 interface AppointmentData{
   id:string;
@@ -13,12 +15,27 @@ interface AppointmentData{
 }
 
 const Appointments:React.FC = () =>{
+  const history = useHistory()
   const [appointments, setAppoiment] = useState<AppointmentData[]>([] as AppointmentData[])
+
   useEffect(() =>{
     api.get('/appointments').then(response =>{
       setAppoiment(response.data)
     })
   },[])
+
+  const handleDeleteAppointment = useCallback(async(id:string) =>{
+    try{
+      await api.delete(`/appointments/${id}`)
+      toast.success('Agendamento cancelado com sucesso!');
+      history.push('/home')
+
+
+    }catch(error){
+      toast.error('Houve um erro ao deletar o agendamento')
+    }
+
+  },[history])
 
   return(
     <>
@@ -35,8 +52,10 @@ const Appointments:React.FC = () =>{
               <p> <strong> Data do agendamento: </strong> {transformDate(appointment.appointment_date)}</p>
             </div>
             <div>
-              <FiEdit size={23} color="#e83f5b"/>
-              <FiTrash size={23} color="#5965e0"/>
+              <Link to={`/appointments/${appointment.id}`}>
+               <FiEdit size={23} color="#e83f5b"/>
+              </Link>
+              <FiTrash size={23} color="#5965e0" onClick={() => handleDeleteAppointment(appointment.id)}/>
             </div>
           </Item>
          ))}

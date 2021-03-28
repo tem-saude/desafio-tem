@@ -4,6 +4,7 @@ import WelcomePage from '../pages/Welcome'
 import HomePage from '../pages/Home'
 import Register from '../pages/Register';
 import Appointments from '../pages/Appointments'
+import Appointment from '../pages/Appointment'
 
 const Routes:React.FC = () =>{
   return(
@@ -13,6 +14,7 @@ const Routes:React.FC = () =>{
         <Route path="/home" component={HomePage}/>
         <Route path="/register" component={Register}/>
         <Route path="/dashboard" component={Appointments}/>
+        <Route path="/appointments/:id" component={Appointment}/>
       </Switch>
     </>
   )
