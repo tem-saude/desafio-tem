@@ -1,6 +1,8 @@
 import { Router } from 'express';
-import {parseISO, format} from 'date-fns'
-import {CreateAppointmentService, ListAppointmentsServices,DeleteAppointmentService,UpdateAppointmentService, ListAppointmentService} from '../services/Appointments'
+import { CreateAppointmentService,ListAppointmentsServices,
+         DeleteAppointmentService,UpdateAppointmentService,
+         ListAppointmentService } from '../services/Appointments'
+import {parseDateToFormatDate} from '../helper/transformDateHelper'
 
 
 const appointmentsRouter = Router()
@@ -30,14 +32,12 @@ appointmentsRouter.get('/:id', async(request, response) =>{
 appointmentsRouter.post('/', async(request, response) =>{
   try{
     const { patient, doctor, appointment_date} = request.body;
-    const parsedDate = parseISO(appointment_date);
-    const formatDate = format(parsedDate, "yyyy-MM-dd kk:mm:ss")
 
     const createAppointmentService = new CreateAppointmentService();
     const appointment = await createAppointmentService.execute({
       patient,
       doctor,
-      appointment_date:formatDate,
+      appointment_date:parseDateToFormatDate(appointment_date)
     })
 
     return response.status(201).json(appointment)
@@ -65,13 +65,11 @@ appointmentsRouter.put('/:id', async(request, response) =>{
   try{
     const { id } = request.params;
     const { patient, doctor, appointment_date} = request.body;
-    const parsedDate = parseISO(appointment_date);
-    const formatDate = format(parsedDate, "yyyy-MM-dd kk:mm:ss")
     const updatedAppoinmentService = new UpdateAppointmentService();
     const updatedAppoinment = await updatedAppoinmentService.excute(id, {
       patient,
       doctor,
-      appointment_date:formatDate,
+      appointment_date:parseDateToFormatDate(appointment_date),
     })
 
     return response.status(200).json(updatedAppoinment)
