@@ -1,6 +1,7 @@
 import {getCustomRepository} from 'typeorm';
 import AppointmentRepository from '../../repositories/AppoinmentRepository'
 import Appoinment from '../../models/Appointment'
+import AppError from '../../errors/AppError'
 
 
 export class ListAppointmentService{
@@ -10,7 +11,7 @@ export class ListAppointmentService{
     const findAppointmentById = await appointmentRepository.findOne({id});
 
     if(!findAppointmentById){
-      throw new Error('This appointment does not exists');
+      throw new AppError('This appointment does not exists');
     }
 
     return findAppointmentById || null;

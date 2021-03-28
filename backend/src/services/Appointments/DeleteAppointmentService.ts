@@ -1,6 +1,6 @@
 import {getCustomRepository} from 'typeorm';
 import AppointmentRepository from '../../repositories/AppoinmentRepository';
-
+import AppError from '../../errors/AppError'
 
 
 export class DeleteAppointmentService{
@@ -10,7 +10,7 @@ export class DeleteAppointmentService{
     const findAppointmentWithSameId = await appointmentRepository.findOne({id});
 
     if(!findAppointmentWithSameId){
-      throw new Error('This appointment does not exists');
+      throw new AppError('This appointment does not exists');
     }
 
     await appointmentRepository.remove(findAppointmentWithSameId)

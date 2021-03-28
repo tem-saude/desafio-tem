@@ -1,6 +1,7 @@
 import { getCustomRepository } from 'typeorm';
 import Appointment from '../../models/Appointment';
 import AppointmentRepository from '../../repositories/AppoinmentRepository';
+import AppError from '../../errors/AppError';
 
 interface Request{
   patient: string;
@@ -17,7 +18,7 @@ export class UpdateAppointmentService{
     const findAppointmentWithSameId = await appointmentRepository.findOne({where:{id}})
 
     if(!findAppointmentWithSameId){
-      throw new Error('This appointment was not found')
+      throw new AppError('This appointment was not found')
     }
 
     const updatedAppointment = appointmentRepository.create(data)
