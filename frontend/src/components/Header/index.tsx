@@ -1,5 +1,5 @@
 import React from 'react';
-import {Container,Content} from "./styles"
+import {Container,Content,UserName} from "./styles"
 import Button from '../Button'
 import {useAuth} from '../../hooks'
 
@@ -11,7 +11,7 @@ const Header: React.FC  = () =>{
       <Container>
       <div>
         <Content>
-          <h1> Seja Bem Vindo {userName} ! </h1>
+          <h1> Seja Bem Vindo <UserName> {userName} ! </UserName></h1>
         </Content>
         <Button/>
       </div>

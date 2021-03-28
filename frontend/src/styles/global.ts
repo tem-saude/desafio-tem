@@ -42,10 +42,12 @@ ul{
 
 body .Toastify__toast-container{
   margin-top:20px;
-  padding: 20px;
+  width: 100%;
+  max-width:400px;
+  height:40px;
+  padding: 40px;
   color:#fff;
-  opacity:0.8;
-  font-size: 14px;
+  font-size: 13px;
 }
 
 body .Toastify .Toastify__toast-container .Toastify__toast--success{

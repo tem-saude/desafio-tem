@@ -39,6 +39,33 @@ export const Container = styled.div`
  }
 
 
+@media(max-width:949px){
+
+  h1{
+      font-size: 26px;
+    }
+  div{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+
+  > div{
+
+     width: 100%;
+     max-width: 500px;
+     margin: 20px auto;
+
+     &:hover{
+       transform:none;
+     }
+
+ }
+  }
+
+  }
+
+
 
 `
 
@@ -55,6 +82,7 @@ export const Content = styled.div`
 
 `
 export const LeftContent  = styled.div`
+ color:${colors.text};
  display:flex;
  flex-direction:column;
  align-items:center;
@@ -106,10 +134,16 @@ export const LeftContent  = styled.div`
    transform:translateY(-20px)
  }
 
+
+
+
+
+
 `
 
 
 export const RightContent = styled.div`
+ color:${colors.text};
  flex:1;
  display:flex;
  flex-direction:column;
@@ -157,6 +191,8 @@ export const RightContent = styled.div`
      background:${shade(0.2, '#560791')}
    }
  }
+
+
 
 
 

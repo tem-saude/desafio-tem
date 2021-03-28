@@ -2,20 +2,21 @@ import React, { useState,useCallback} from 'react';
 import {useHistory} from 'react-router-dom';
 import { toast } from 'react-toastify';
 import {useAuth} from '../../hooks/index'
-import { Container, Title, Error} from './styles';
+import { Container, Title, Error, Content} from './styles';
 
 const Welcome:React.FC  = () =>{
   const history = useHistory()
   const [inputText, setInputText] = useState('')
   const [inputError, setInputError] = useState('')
   const {addUser} = useAuth()
+
   const handleStart = useCallback(() =>{
     if(!inputText){
       setInputError('Por favor informe o nome do úsuario')
       return
     }
 
-    toast.success(`Seja bem vindo ao sistema ${inputText}`)
+    toast.success(`Seja bem vindo ao sistema ${inputText}!`)
     setInputText('')
     setInputError('')
     addUser(inputText)
@@ -25,8 +26,10 @@ const Welcome:React.FC  = () =>{
   },[ inputText, history, addUser])
 
   return(
-    <Container hasError={!!inputError}>
+    <Container>
+      <Content hasError={!!inputError}>
       <h1> Seja bem-vindo ao teste técnico da <Title>TEM</Title> </h1>
+      <span> Para melhorar sua usabilidade durante a aplicação por favor informe seu nome.</span>
       <input
         type="text"
         placeholder="Informe seu Nome"
@@ -34,9 +37,10 @@ const Welcome:React.FC  = () =>{
         onChange={(e) => setInputText(e.target.value)}
         />
         {inputError && <Error>{inputError}</Error>}
-      <span> Para melhorar sua usabilidade durante a aplicação por favor informe seu nome.</span>
       <span> Clique no botão "Prosseguir" para continuar </span>
       <button type="button" onClick={handleStart}> Prosseguir</button>
+      </Content>
+
     </Container>
   )
 }

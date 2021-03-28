@@ -9,6 +9,12 @@ export const Container = styled.div`
  align-items:center;
  justify-content:center;
 
+ svg{
+   position:absolute;
+   top: 30px;
+   left: 25px;
+ }
+
 
 `
 

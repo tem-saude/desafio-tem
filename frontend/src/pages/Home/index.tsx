@@ -28,7 +28,7 @@ const Home:React.FC  =() =>{
         <RightContent>
           <img src={listAppointmentImage} alt="Create Appointment Icon"/>
           <strong> Consultar  Agendamentos </strong>
-          <Link to="/dashboard"> Clique Aqui </Link>
+          <Link to="/appointments"> Clique Aqui </Link>
         </RightContent>
        </Content>
 

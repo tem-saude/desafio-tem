@@ -7,16 +7,16 @@ import {Exit} from './styles'
 
 const Button:React.FC  = () =>{
   const history = useHistory();
-  const {signOut} = useAuth();
+  const {signOut, userName} = useAuth();
 
   const handleExit = useCallback(() =>{
-    toast.success('Obrigado, volte sempre!');
+    toast.success(`Obrigado ${userName}, volte sempre!`);
 
     setTimeout(() =>{
       history.push('/')
       signOut()
     },1000)
-  }, [history, signOut])
+  }, [history, signOut, userName])
   return(
     <Exit>
     <button type="button" onClick={handleExit}>

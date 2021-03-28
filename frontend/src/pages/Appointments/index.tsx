@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect, useState } from 'react';
-import { FiEdit, FiTrash } from 'react-icons/fi';
+import { FiEdit, FiTrash, FiArrowLeft } from 'react-icons/fi';
 import { useHistory, Link } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import Header from '../../components/Header';
@@ -41,6 +41,9 @@ const Appointments:React.FC = () =>{
     <>
     <Header/>
     <Container>
+      <Link to ="/home">
+      <FiArrowLeft size={20} color="#ccc"/>
+      </Link>
         <Content>
           <h1> Lista de agendamentos </h1>
          {appointments.map(appointment =>(
