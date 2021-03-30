@@ -1,9 +1,9 @@
 import React from 'react';
-import {ToastContainer} from 'react-toastify'
-import {BrowserRouter as Router} from 'react-router-dom';
-import {AppProvider} from './hooks/index'
-import Routes from './routes'
-import GlobalStyles from './styles/global'
+import { BrowserRouter as Router } from 'react-router-dom';
+import { ToastContainer } from 'react-toastify';
+import { AppProvider } from './hooks/index';
+import Routes from './routes';
+import GlobalStyles from './styles/global';
 
 const App:React.FC  = () =>{
   return(

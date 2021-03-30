@@ -45,7 +45,7 @@ const Register:React.FC = () =>{
         appointment_date
       })
       toast.success('Agendamento cadastradado com sucesso')
-      history.push('/dashboard')
+      history.push('/home')
     }catch(error){
       toast.error('Não foi possivel realizar o agendamento.')
     }

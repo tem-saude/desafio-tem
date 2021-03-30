@@ -11,7 +11,7 @@ const Header: React.FC  = () =>{
       <Container>
       <div>
         <Content>
-          <h1> Seja Bem Vindo <UserName> {userName} ! </UserName></h1>
+          <h1> Seja Bem Vindo(a) <UserName> {userName} ! </UserName></h1>
         </Content>
         <Button/>
       </div>

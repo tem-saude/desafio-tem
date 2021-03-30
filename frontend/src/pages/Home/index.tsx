@@ -1,10 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Header from '../../components/Header'
-
 import createAppointmentImage from '../../assets/createAppointment.png';
 import listAppointmentImage from '../../assets/listAppointment.png';
+import Header from '../../components/Header';
 import { Container, Content, LeftContent, RightContent } from './styles';
+
 
 
 

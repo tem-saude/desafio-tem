@@ -1,10 +1,10 @@
 import React from 'react';
-import {Switch, Route} from 'react-router-dom'
-import WelcomePage from '../pages/Welcome'
-import HomePage from '../pages/Home'
+import { Route, Switch } from 'react-router-dom';
+import Appointment from '../pages/Appointment';
+import Appointments from '../pages/Appointments';
+import HomePage from '../pages/Home';
 import Register from '../pages/Register';
-import Appointments from '../pages/Appointments'
-import Appointment from '../pages/Appointment'
+import WelcomePage from '../pages/Welcome';
 
 const Routes:React.FC = () =>{
   return(

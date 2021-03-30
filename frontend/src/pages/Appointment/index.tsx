@@ -1,4 +1,4 @@
-import React, { FormEvent, useCallback, useState, useEffect } from 'react';
+import React, { FormEvent, useCallback, useState } from 'react';
 import { FiArrowLeft } from 'react-icons/fi';
 import { Link, useHistory, useRouteMatch } from 'react-router-dom';
 import { toast } from 'react-toastify';
@@ -54,7 +54,7 @@ const Appointment:React.FC = () =>{
         appointment_date
       })
       toast.success('Agendamento atualizado com sucesso')
-      history.push('/dashboard')
+      history.push('/home')
     }catch(error){
       toast.error('Não foi possivel realizar o agendamento.')
     }

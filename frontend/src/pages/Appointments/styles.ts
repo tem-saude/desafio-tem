@@ -1,6 +1,6 @@
 import styled from 'styled-components';
+import * as colors from '../../config/colors';
 
-import * as colors from '../../config/colors'
 
 export const Container = styled.div`
  width:100%;

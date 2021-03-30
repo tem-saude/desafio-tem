@@ -1,8 +1,8 @@
-import React, { useState,useCallback} from 'react';
-import {useHistory} from 'react-router-dom';
+import React, { useCallback, useState } from 'react';
+import { useHistory } from 'react-router-dom';
 import { toast } from 'react-toastify';
-import {useAuth} from '../../hooks/index'
-import { Container, Title, Error, Content} from './styles';
+import { useAuth } from '../../hooks/index';
+import { Container, Content, Error, Title } from './styles';
 
 const Welcome:React.FC  = () =>{
   const history = useHistory()
@@ -16,7 +16,7 @@ const Welcome:React.FC  = () =>{
       return
     }
 
-    toast.success(`Seja bem vindo ao sistema ${inputText}!`)
+    toast.success(`Seja bem vindo(a) ao sistema ${inputText}!`)
     setInputText('')
     setInputError('')
     addUser(inputText)

@@ -1,6 +1,6 @@
+import { shade } from 'polished';
 import styled from 'styled-components';
-import {shade} from 'polished'
-import * as colors from '../../config/colors'
+import * as colors from '../../config/colors';
 
 export const Container = styled.div`
 height: 100%;
