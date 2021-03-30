@@ -55,7 +55,7 @@ const Appointments:React.FC = () =>{
               <p> <strong> Data do agendamento: </strong> {transformDate(appointment.appointment_date)}</p>
             </div>
             <div>
-              <Link to={`/appointments/${appointment.id}`}>
+              <Link to={`/appointment/${appointment.id}`}>
                <FiEdit size={23} color="#e83f5b"/>
               </Link>
               <FiTrash size={23} color="#5965e0" onClick={() => handleDeleteAppointment(appointment.id)}/>

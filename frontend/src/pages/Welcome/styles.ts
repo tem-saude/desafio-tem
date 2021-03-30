@@ -40,15 +40,14 @@ export const Container = styled.div`
 export const Content = styled.div<ContentProps>`
 
 max-width:600px;
-
-padding: 20px;
+padding:80px  40px;
 border-radius:20px;
 display:flex;
 flex-direction:column;
 align-items:center;
 justify-content:center;
 text-align:center;
-box-shadow: 0 0 4px 4px ${colors.textHighlight};
+box-shadow: 0 0 2px 2px ${colors.textHighlight};
 background:rgba(255,255,255,0.5);
 animation: ${showContent} 2s ease-out;
 

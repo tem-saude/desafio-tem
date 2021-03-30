@@ -65,6 +65,37 @@ export const Container = styled.div`
 
   }
 
+  @media(max-width:565px){
+
+h1{
+    font-size: 23px;
+  }
+div{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+
+> div{
+
+   width: 100%;
+   max-width: 400px;
+   margin: 20px auto;
+
+   strong{
+     font-size: 20px;
+   }
+
+   &:hover{
+     transform:none;
+   }
+
+}
+}
+
+}
+
+
 
 
 `
