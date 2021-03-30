@@ -1,6 +1,6 @@
-import styled, {keyframes,css} from 'styled-components'
-import {shade} from 'polished'
-import * as colors from '../../config/colors'
+import { shade } from 'polished';
+import styled, { css, keyframes } from 'styled-components';
+import * as colors from '../../config/colors';
 
 interface ContentProps{
   hasError: boolean;

@@ -1,46 +1,48 @@
-# Getting Started with Create React App
+# Teste Técnico Tem (Front-end)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+O teste técnico consiste no desenvolvimento de uma aplicação de gerenciamento de agendamentos, onde o usuário ira poder fazer as operações de CRUD(Create, Read, Update, Delete) no sistema.
 
-## Available Scripts
 
-In the project directory, you can run:
+## Como fazer o download do projeto.
 
-### `yarn start`
+#### 1ª Opção (Observação é necessário ter o git instalado na maquina para executar essa opção)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+<li> Utilize o comando  git clone https://github.com/tem-saude/desafio-tem.git no seu terminal para fazer o download do repositório </li>
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+<li> E acessar o arquivo baixado pelo seu editor de código </li>
 
-### `yarn test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Gerenciadores de Pacotes (Yarn / Npm)
 
-### `yarn build`
+Antes de executar o projeto é necessario instalar as dependências  para que o projeto funcione.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+#### YARN
+Se você estiver utilizando o gerenciador de pacotes yarn , basta executar o comando yarn no terminal com o endereço referente a esse projeto.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `yarn eject`
+#### NPM
+Se você estiver utilizando o npm como gerenciador  de pacotes, o processo é um pouco diferente basta excluir o arquivo yarn.lock, após o arquivo ter sido deletado basta executar o comando npm install
+para instalar as dependências necessárias.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Script de Execução do projeto
+<li>Para executar a aplicação no yarn basta utilizar o comando yarn start</li>
+<li>Para executar a aplicação no npm basta utilizar o comando npm start</li>
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## Aviso Importante!
+É necessario que o back-end(feito em NodeJS) esteja rodando para utilizar a aplicação.
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+#### Bibliotecas utilizadas no Desenvolvimento da aplicação
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+<li> ReactJS </li>
+<li>  Typescript </li>
+<li> Context Api</li>
+<li> Styled-components </li>
+<li>  Polished </li>
+<li>  React-router-dom </li>
+<li>  React-toastfly </li>
+<li> Eslint </li>
+<li> Prettier </li>
