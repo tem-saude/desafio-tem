@@ -8,8 +8,27 @@ import routes from './routes';
 import AppError from './errors/AppError'
 dotevn.config()
 
+
+const whiteList =[
+  'http://localhost:3000',
+  'https://relaxed-knuth-291602.netlify.app'
+
+]
+
+const corsOptions ={
+  origin: function(origin, callback){
+    if(whiteList.indexOf(origin) !== -1 || !origin){
+      callback(null, true)
+    }else{
+      callback(new Error('Not allowed by cors'))
+    }
+  }
+}
+
 const app = express();
-app.use(cors());
+app.use(cors(corsOptions));
+
+
 app.use(express.json())
 app.use(routes);
 

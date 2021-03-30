@@ -2,6 +2,10 @@
 
 O teste técnico consiste no desenvolvimento de uma aplicação de gerenciamento de agendamentos, onde o usuário ira poder fazer as operações de CRUD(Create, Read, Update, Delete) no sistema.
 
+## Aviso Importante!
+É necessario que o back-end(feito em NodeJS) esteja rodando para utilizar a aplicação.
+
+Você pode acessar o projeto clicando nesse [link](https://relaxed-knuth-291602.netlify.app)
 
 ## Como fazer o download do projeto.
 
@@ -29,10 +33,6 @@ para instalar as dependências necessárias.
 ### Script de Execução do projeto
 <li>Para executar a aplicação no yarn basta utilizar o comando yarn start</li>
 <li>Para executar a aplicação no npm basta utilizar o comando npm start</li>
-
-
-## Aviso Importante!
-É necessario que o back-end(feito em NodeJS) esteja rodando para utilizar a aplicação.
 
 
 #### Bibliotecas utilizadas no Desenvolvimento da aplicação
