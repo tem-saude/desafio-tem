@@ -12,8 +12,8 @@ class Appointment{
   @Column()
   doctor: string;
 
-  @Column('timestamp with time zone')
-  appointment_date: Date;
+  @Column()
+  appointment_date: string;
 
 
    @CreateDateColumn()

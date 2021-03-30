@@ -2,10 +2,11 @@ import 'reflect-metadata';
 import cors from 'cors';
 import express, {Request, Response,NextFunction} from 'express';
 import 'express-async-errors'
-import env from './config/env';
+import dotevn from 'dotenv';
 import './database';
 import routes from './routes';
 import AppError from './errors/AppError'
+dotevn.config()
 
 const app = express();
 app.use(cors());
@@ -27,6 +28,6 @@ app.use((error:Error, request:Request, response:Response, _:NextFunction) =>{
 })
 
 
-app.listen(env.port);
+app.listen(process.env.SERVER_PORT);
 
 export default app;
