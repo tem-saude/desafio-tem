@@ -27,4 +27,6 @@ app.use((error:Error, request:Request, response:Response, _:NextFunction) =>{
 })
 
 
-app.listen(env.port, () => console.log('Server is runing'));
+app.listen(env.port);
+
+export default app;
